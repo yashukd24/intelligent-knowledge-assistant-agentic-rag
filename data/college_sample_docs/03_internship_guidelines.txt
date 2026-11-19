@@ -1,0 +1,14 @@
+=== APEX INSTITUTE OF TECHNOLOGY ===
+UNDERGRADUATE INTERNSHIP GUIDELINES & ACADEMIC CREDIT RULES
+
+SECTION 1: MANDATORY SUMMER INTERNSHIP REQUIREMENT:
+All enrolled undergraduate engineering students must complete a mandatory 8-week summer industrial internship in an accredited corporate enterprise, research organization, or institutional laboratory following the completion of the 6th semester examinations and prior to entering the 7th semester.
+
+SECTION 2: APPROVAL AND NO OBJECTION CERTIFICATE (NOC):
+1. Prior to commencing any external internship, students must obtain a formal No Objection Certificate (NOC) endorsed by the respective Head of Department (HOD) and the Dean of Academic Affairs.
+2. Unapproved or retroactive internships will not be recognized for institutional academic credit.
+
+SECTION 3: REPORTING AND EVALUATION:
+1. Every intern must maintain a digital weekly progress log summarizing technical activities and project deliverables, signed by their designated industrial mentor.
+2. Weekly logs must be submitted via the college ERP portal by 5:00 PM every Monday.
+3. Upon returning to campus for the 7th semester, students must present a comprehensive technical report and undergo an oral defense before the Departmental Internship Evaluation Committee. The internship carries three (3) academic credits.

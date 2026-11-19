@@ -1,0 +1,105 @@
+# ============================================================
+# Intelligent Knowledge Assistant — .gitignore
+# ============================================================
+
+# --- Secrets and credentials ---
+.env
+*.env
+!.env.example
+secrets/
+*.pem
+*.key
+*.cert
+
+# --- Virtual environments ---
+venv/
+env/
+.venv/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# --- IDE & OS ---
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Testing ---
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.xml
+
+# --- Frontend Node & Build outputs ---
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+
+# --- Explicitly preserve critical source directories ---
+!backend/models/
+!frontend/src/lib/
+
+# --- Python compiled & cache files (never commit) ---
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+*.spec
+
+# --- Databases and persistence (never commit runtime data) ---
+*.db
+*.sqlite
+*.sqlite3
+data/knowledge_assistant.db*
+data/chromadb/
+data/uploads/*
+!data/uploads/.gitkeep
+data/backups/
+data/logs/
+
+# Preserve top-level data folder placeholder
+!data/.gitkeep
+
+# --- Large model caches & weights ---
+.cache/
+/models/
+*.bin
+*.safetensors
+*.pt
+*.pth
+huggingface/
+sentence_transformers/
+
+# --- Logs & Temp ---
+logs/
+*.log
+tmp/
+temp/
+*.tmp
+*.bak
+test_chunks.pdf
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.ipynb

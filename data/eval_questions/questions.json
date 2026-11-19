@@ -1,0 +1,11 @@
+{
+  "_metadata": {
+    "description": "Evaluation question set for Intelligent Knowledge Assistant research",
+    "version": "1.0",
+    "phase_created": 1,
+    "note": "Questions populated in Phase 20. Keep separate from development test questions.",
+    "corpus": "TBD — shared research corpus added in Phase 7",
+    "total_questions": 0
+  },
+  "questions": []
+}

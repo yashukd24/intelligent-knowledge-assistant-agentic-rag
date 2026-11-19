@@ -1,0 +1,113 @@
+"""
+backend/schemas/query_plan.py
+─────────────────────────────────────────────────────────────
+Pydantic v2 schemas for Phase 11 Query Understanding & Planning:
+  - QueryIntent: Categorized intent classification enum.
+  - SubQuery: Atomic derived subquery linked to parent query.
+  - QueryAnalysis: Structured query understanding outcome.
+  - PlanStepType & PlanStep: Discrete plan step specifications.
+  - ExecutionPlan: Structured, ordered execution plan.
+─────────────────────────────────────────────────────────────
+"""
+
+from enum import Enum
+from typing import Any, Dict, List, Optional
+from uuid import uuid4
+
+from pydantic import BaseModel, ConfigDict, Field
+
+
+class QueryIntent(str, Enum):
+    """Categorized primary intent of the user query."""
+    FACTUAL = "factual"             # Direct lookup or entity definition
+    COMPARATIVE = "comparative"     # Comparison, contrast, or trade-offs between entities
+    MULTI_PART = "multi_part"       # Conjunctions or multiple questions in one prompt
+    SUMMARIZATION = "summarization" # High-level synthesis, overview, or condensation
+    EXPLORATORY = "exploratory"     # Broad, open-ended conceptual inquiries
+
+    # Phase 23: Structured College Institutional Intents
+    ADMISSION_QUERY = "admission_query"
+    COURSE_QUERY = "course_query"
+    CAMPUS_LOCATION = "campus_location"
+    DEPARTMENT_INFORMATION = "department_information"
+    FACULTY_INFORMATION = "faculty_information"
+    PLACEMENT_POLICY = "placement_policy"
+    INTERNSHIP_POLICY = "internship_policy"
+    ATTENDANCE_POLICY = "attendance_policy"
+    EXAMINATION_POLICY = "examination_policy"
+    SCHOLARSHIP_QUERY = "scholarship_query"
+    FEE_QUERY = "fee_query"
+    FACILITY_INFORMATION = "facility_information"
+    CONTACT_QUERY = "contact_query"
+    FACULTY_POLICY = "faculty_policy"
+    ADMINISTRATIVE_QUERY = "administrative_query"
+    GENERAL_COLLEGE_QUERY = "general_college_query"
+    UNKNOWN_OR_UNSUPPORTED = "unknown_or_unsupported"
+
+
+class SubQuery(BaseModel):
+    """
+    An atomic, self-contained subquery derived from query decomposition.
+    Strictly preserves reference to the original parent query.
+    """
+    id: str = Field(default_factory=lambda: f"sq-{uuid4().hex[:6]}", description="Unique subquery identifier.")
+    parent_query: str = Field(..., description="Authoritative original user query.")
+    text: str = Field(..., description="Self-contained natural language subquery.")
+    intent: QueryIntent = Field(default=QueryIntent.FACTUAL, description="Specific intent of this subquery.")
+    order: int = Field(default=0, ge=0, description="Execution sequence index.")
+    description: Optional[str] = Field(default=None, description="Rationale for this subquery.")
+
+    model_config = ConfigDict(frozen=True)
+
+
+class QueryAnalysis(BaseModel):
+    """
+    Structured outcome of query understanding, intent classification,
+    and complexity evaluation.
+    """
+    original_query: str = Field(..., description="Raw submitted query.")
+    normalized_query: str = Field(..., description="Sanitized, noise-reduced query.")
+    primary_intent: QueryIntent = Field(..., description="Dominant classified intent.")
+    college_intent: Optional[QueryIntent] = Field(default=None, description="Domain-specific college intent if applicable.")
+    target_categories: List[str] = Field(default_factory=list, description="Target institutional categories identified from query.")
+    target_departments: List[str] = Field(default_factory=list, description="Target departments identified from query.")
+    is_complex: bool = Field(default=False, description="True if query contains multiple information facets.")
+    complexity_factors: List[str] = Field(default_factory=list, description="Reasons triggering decomposition.")
+    subqueries: List[SubQuery] = Field(default_factory=list, description="Derived subqueries (>= 1).")
+    comparison_objective: Optional[str] = Field(default=None, description="Preserved comparison target or prompt objective when intent is comparative.")
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class PlanStepType(str, Enum):
+    """Execution step classification within an execution plan."""
+    RETRIEVAL = "retrieval"
+    CONTEXT_ASSEMBLY = "context_assembly"
+    EVIDENCE_EVALUATION = "evidence_evaluation"
+    SYNTHESIS = "synthesis"
+
+
+class PlanStep(BaseModel):
+    """A discrete executable step in the generated agent execution plan."""
+    step_number: int = Field(..., ge=1, description="1-based execution order.")
+    step_type: PlanStepType = Field(..., description="Step action type.")
+    name: str = Field(..., description="Human-readable title.")
+    subquery_id: Optional[str] = Field(default=None, description="Linked SubQuery ID if step is retrieval.")
+    description: str = Field(..., description="Detailed execution instruction.")
+
+    model_config = ConfigDict(frozen=True)
+
+
+class ExecutionPlan(BaseModel):
+    """
+    Complete structured execution plan generated by the planning layer.
+    """
+    plan_id: str = Field(default_factory=lambda: f"plan-{uuid4().hex[:8]}")
+    original_query: str
+    steps: List[PlanStep] = Field(default_factory=list)
+    is_decomposed: bool = Field(default=False)
+    subquery_count: int = Field(default=1, ge=1)
+    plan_summary: str = Field(default="")
+    comparison_objective: Optional[str] = Field(default=None, description="Explicit comparative objective for final synthesis stage.")
+
+    model_config = ConfigDict(from_attributes=True)

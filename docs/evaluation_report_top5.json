@@ -1,0 +1,462 @@
+{
+  "run_id": "eval_4740cd2e8007",
+  "dataset_name": "synthetic-university-policies-v1",
+  "dataset_size": 10,
+  "timestamp": "2026-11-09T16:22:17.760996+00:00",
+  "top_k": 5,
+  "similarity_threshold": null,
+  "warmup_latency_ms": 22.74,
+  "query_results": [
+    {
+      "case_id": "tc_01_factual_gpa",
+      "query": "What is the minimum cumulative GPA required for graduate degree graduation?",
+      "query_type": "factual",
+      "retrieved_chunk_ids": [
+        "eval_doc_02_v1_c0000",
+        "eval_doc_04_v1_c0000",
+        "eval_doc_02_v1_c0001",
+        "eval_doc_04_v1_c0001",
+        "eval_doc_01_v1_c0002"
+      ],
+      "expected_chunk_ids": [
+        "eval_doc_02_v1_c0000"
+      ],
+      "relevant_retrieved_chunk_ids": [
+        "eval_doc_02_v1_c0000"
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "hit": true,
+      "latency_ms": 46.122,
+      "total_candidates": 10,
+      "returned_results": 5,
+      "rejected_candidates": 0,
+      "accepted_candidates": 10,
+      "retrieval_metadata": {
+        "top_k": 5,
+        "similarity_threshold": null,
+        "rejection_reasons": {},
+        "candidate_oversampling": 10
+      },
+      "error": null
+    },
+    {
+      "case_id": "tc_02_conceptual_integrity",
+      "query": "How does the university handle academic dishonesty and integrity violations?",
+      "query_type": "conceptual",
+      "retrieved_chunk_ids": [
+        "eval_doc_01_v1_c0000",
+        "eval_doc_01_v1_c0001",
+        "eval_doc_01_v1_c0002",
+        "eval_doc_02_v1_c0001",
+        "eval_doc_04_v1_c0000"
+      ],
+      "expected_chunk_ids": [
+        "eval_doc_01_v1_c0000",
+        "eval_doc_01_v1_c0001"
+      ],
+      "relevant_retrieved_chunk_ids": [
+        "eval_doc_01_v1_c0000",
+        "eval_doc_01_v1_c0001"
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "hit": true,
+      "latency_ms": 35.685,
+      "total_candidates": 10,
+      "returned_results": 5,
+      "rejected_candidates": 0,
+      "accepted_candidates": 10,
+      "retrieval_metadata": {
+        "top_k": 5,
+        "similarity_threshold": null,
+        "rejection_reasons": {},
+        "candidate_oversampling": 10
+      },
+      "error": null
+    },
+    {
+      "case_id": "tc_03_definition_plagiarism",
+      "query": "What constitutes plagiarism according to the academic honor code?",
+      "query_type": "definition",
+      "retrieved_chunk_ids": [
+        "eval_doc_01_v1_c0000",
+        "eval_doc_01_v1_c0001",
+        "eval_doc_01_v1_c0002",
+        "eval_doc_02_v1_c0001",
+        "eval_doc_02_v1_c0000"
+      ],
+      "expected_chunk_ids": [
+        "eval_doc_01_v1_c0000"
+      ],
+      "relevant_retrieved_chunk_ids": [
+        "eval_doc_01_v1_c0000"
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "hit": true,
+      "latency_ms": 40.355,
+      "total_candidates": 10,
+      "returned_results": 5,
+      "rejected_candidates": 0,
+      "accepted_candidates": 10,
+      "retrieval_metadata": {
+        "top_k": 5,
+        "similarity_threshold": null,
+        "rejection_reasons": {},
+        "candidate_oversampling": 10
+      },
+      "error": null
+    },
+    {
+      "case_id": "tc_04_multipart_degree_defense",
+      "query": "What are the required semester credit hours and the thesis defense committee composition for master's students?",
+      "query_type": "multi-part",
+      "retrieved_chunk_ids": [
+        "eval_doc_02_v1_c0001",
+        "eval_doc_02_v1_c0000",
+        "eval_doc_01_v1_c0002",
+        "eval_doc_04_v1_c0000",
+        "eval_doc_01_v1_c0001"
+      ],
+      "expected_chunk_ids": [
+        "eval_doc_02_v1_c0000",
+        "eval_doc_02_v1_c0001"
+      ],
+      "relevant_retrieved_chunk_ids": [
+        "eval_doc_02_v1_c0001",
+        "eval_doc_02_v1_c0000"
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "hit": true,
+      "latency_ms": 60.425,
+      "total_candidates": 10,
+      "returned_results": 5,
+      "rejected_candidates": 0,
+      "accepted_candidates": 10,
+      "retrieval_metadata": {
+        "top_k": 5,
+        "similarity_threshold": null,
+        "rejection_reasons": {},
+        "candidate_oversampling": 10
+      },
+      "error": null
+    },
+    {
+      "case_id": "tc_05_crosschunk_sanctions_appeals",
+      "query": "What sanctions are imposed for honor code offenses and how can a student file an appeal?",
+      "query_type": "cross-chunk",
+      "retrieved_chunk_ids": [
+        "eval_doc_01_v1_c0001",
+        "eval_doc_01_v1_c0002",
+        "eval_doc_03_v1_c0001",
+        "eval_doc_03_v1_c0002",
+        "eval_doc_01_v1_c0000"
+      ],
+      "expected_chunk_ids": [
+        "eval_doc_01_v1_c0001",
+        "eval_doc_01_v1_c0002"
+      ],
+      "relevant_retrieved_chunk_ids": [
+        "eval_doc_01_v1_c0001",
+        "eval_doc_01_v1_c0002"
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "hit": true,
+      "latency_ms": 46.837,
+      "total_candidates": 10,
+      "returned_results": 5,
+      "rejected_candidates": 0,
+      "accepted_candidates": 10,
+      "retrieval_metadata": {
+        "top_k": 5,
+        "similarity_threshold": null,
+        "rejection_reasons": {},
+        "candidate_oversampling": 10
+      },
+      "error": null
+    },
+    {
+      "case_id": "tc_06_paraphrase_dorm_noise",
+      "query": "When are dormitory residents expected to maintain silence during the week?",
+      "query_type": "paraphrase",
+      "retrieved_chunk_ids": [
+        "eval_doc_03_v1_c0000",
+        "eval_doc_03_v1_c0001",
+        "eval_doc_03_v1_c0002",
+        "eval_doc_02_v1_c0001",
+        "eval_doc_01_v1_c0002"
+      ],
+      "expected_chunk_ids": [
+        "eval_doc_03_v1_c0000"
+      ],
+      "relevant_retrieved_chunk_ids": [
+        "eval_doc_03_v1_c0000"
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "hit": true,
+      "latency_ms": 35.37,
+      "total_candidates": 10,
+      "returned_results": 5,
+      "rejected_candidates": 0,
+      "accepted_candidates": 10,
+      "retrieval_metadata": {
+        "top_k": 5,
+        "similarity_threshold": null,
+        "rejection_reasons": {},
+        "candidate_oversampling": 10
+      },
+      "error": null
+    },
+    {
+      "case_id": "tc_07_limited_info_stipend",
+      "query": "How is the Presidential Research Fellowship stipend disbursed and what are the renewal rules?",
+      "query_type": "limited-info",
+      "retrieved_chunk_ids": [
+        "eval_doc_04_v1_c0001",
+        "eval_doc_03_v1_c0002",
+        "eval_doc_01_v1_c0002",
+        "eval_doc_02_v1_c0001",
+        "eval_doc_04_v1_c0000"
+      ],
+      "expected_chunk_ids": [
+        "eval_doc_04_v1_c0001"
+      ],
+      "relevant_retrieved_chunk_ids": [
+        "eval_doc_04_v1_c0001"
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "hit": true,
+      "latency_ms": 32.301,
+      "total_candidates": 10,
+      "returned_results": 5,
+      "rejected_candidates": 0,
+      "accepted_candidates": 10,
+      "retrieval_metadata": {
+        "top_k": 5,
+        "similarity_threshold": null,
+        "rejection_reasons": {},
+        "candidate_oversampling": 10
+      },
+      "error": null
+    },
+    {
+      "case_id": "tc_08_unanswerable_parking",
+      "query": "What are the fees for campus vehicle parking permits and shuttle bus timetables?",
+      "query_type": "unanswerable",
+      "retrieved_chunk_ids": [
+        "eval_doc_03_v1_c0002",
+        "eval_doc_03_v1_c0000",
+        "eval_doc_01_v1_c0002",
+        "eval_doc_03_v1_c0001",
+        "eval_doc_02_v1_c0000"
+      ],
+      "expected_chunk_ids": [],
+      "relevant_retrieved_chunk_ids": [],
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "hit": false,
+      "latency_ms": 32.269,
+      "total_candidates": 10,
+      "returned_results": 5,
+      "rejected_candidates": 0,
+      "accepted_candidates": 10,
+      "retrieval_metadata": {
+        "top_k": 5,
+        "similarity_threshold": null,
+        "rejection_reasons": {},
+        "candidate_oversampling": 10
+      },
+      "error": null
+    },
+    {
+      "case_id": "tc_09_similar_terms_quorum",
+      "query": "What quorum is required for the Academic Appeals Committee to hold a hearing?",
+      "query_type": "similar-terms",
+      "retrieved_chunk_ids": [
+        "eval_doc_01_v1_c0002",
+        "eval_doc_02_v1_c0001",
+        "eval_doc_03_v1_c0000",
+        "eval_doc_03_v1_c0002",
+        "eval_doc_01_v1_c0001"
+      ],
+      "expected_chunk_ids": [
+        "eval_doc_01_v1_c0002"
+      ],
+      "relevant_retrieved_chunk_ids": [
+        "eval_doc_01_v1_c0002"
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "hit": true,
+      "latency_ms": 36.499,
+      "total_candidates": 10,
+      "returned_results": 5,
+      "rejected_candidates": 0,
+      "accepted_candidates": 10,
+      "retrieval_metadata": {
+        "top_k": 5,
+        "similarity_threshold": null,
+        "rejection_reasons": {},
+        "candidate_oversampling": 10
+      },
+      "error": null
+    },
+    {
+      "case_id": "tc_10_docspecific_housing_refund",
+      "query": "Under campus housing regulations, what is the cancellation penalty and refund schedule for terminating a room contract?",
+      "query_type": "doc-specific",
+      "retrieved_chunk_ids": [
+        "eval_doc_03_v1_c0002",
+        "eval_doc_03_v1_c0001",
+        "eval_doc_03_v1_c0000",
+        "eval_doc_01_v1_c0002",
+        "eval_doc_01_v1_c0001"
+      ],
+      "expected_chunk_ids": [
+        "eval_doc_03_v1_c0002"
+      ],
+      "relevant_retrieved_chunk_ids": [
+        "eval_doc_03_v1_c0002"
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "hit": true,
+      "latency_ms": 30.676,
+      "total_candidates": 10,
+      "returned_results": 5,
+      "rejected_candidates": 0,
+      "accepted_candidates": 10,
+      "retrieval_metadata": {
+        "top_k": 5,
+        "similarity_threshold": null,
+        "rejection_reasons": {},
+        "candidate_oversampling": 10
+      },
+      "error": null
+    }
+  ],
+  "aggregate_metrics": {
+    "mean_precision_at_k": 0.24,
+    "mean_recall_at_k": 0.9,
+    "mrr": 0.9,
+    "hit_rate_at_k": 0.9,
+    "empty_result_count": 0,
+    "empty_result_rate": 0.0,
+    "avg_latency_ms": 39.65,
+    "median_latency_ms": 36.09,
+    "p95_latency_ms": 60.42,
+    "total_candidates_sum": 100,
+    "rejected_candidates_sum": 0,
+    "accepted_candidates_sum": 100,
+    "total_queries": 10,
+    "successful_queries": 10,
+    "failed_queries": 0,
+    "by_query_type": {
+      "factual": {
+        "count": 1.0,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate": 1.0,
+        "avg_latency_ms": 46.12
+      },
+      "conceptual": {
+        "count": 1.0,
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate": 1.0,
+        "avg_latency_ms": 35.69
+      },
+      "definition": {
+        "count": 1.0,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate": 1.0,
+        "avg_latency_ms": 40.35
+      },
+      "multi-part": {
+        "count": 1.0,
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate": 1.0,
+        "avg_latency_ms": 60.42
+      },
+      "cross-chunk": {
+        "count": 1.0,
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate": 1.0,
+        "avg_latency_ms": 46.84
+      },
+      "paraphrase": {
+        "count": 1.0,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate": 1.0,
+        "avg_latency_ms": 35.37
+      },
+      "limited-info": {
+        "count": 1.0,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate": 1.0,
+        "avg_latency_ms": 32.3
+      },
+      "unanswerable": {
+        "count": 1.0,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "mrr": 0.0,
+        "hit_rate": 0.0,
+        "avg_latency_ms": 32.27
+      },
+      "similar-terms": {
+        "count": 1.0,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate": 1.0,
+        "avg_latency_ms": 36.5
+      },
+      "doc-specific": {
+        "count": 1.0,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate": 1.0,
+        "avg_latency_ms": 30.68
+      }
+    }
+  },
+  "failed_cases": [],
+  "warnings": [
+    "Sample size (10) is small; 95th percentile latency may represent nearest rank."
+  ],
+  "hardware_info": {
+    "python_version": "3.13.3",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD"
+  }
+}
